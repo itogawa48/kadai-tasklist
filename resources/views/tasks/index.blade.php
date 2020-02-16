@@ -28,8 +28,7 @@
     
     {!! link_to_route('tasks.create', '新規タスクの投稿', [], ['class' => 'btn btn-primary']) !!}
    
-    {!! Form::model($task, ['route' => ['tasks.destroy', $task->id], 'method' => 'delete']) !!}
-        {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
+    
     {!! Form::close() !!}
 
    
