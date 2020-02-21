@@ -14,6 +14,14 @@
                 </div>
             </aside>
             <div class="col-sm-8">
+                @if (Auth::id() == $user->id)
+                    {!! Form::open(['route' => 'tasks.store']) !!}
+                        <div class="form-group">
+                            {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '2']) !!}
+                            {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
+                        </div>
+                    {!! Form::close() !!}
+                @endif
                 @if (count($tasks) > 0)
                     @include('tasks.tasks', ['tasks' => $tasks])
                 @endif
